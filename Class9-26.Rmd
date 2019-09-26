@@ -1,0 +1,20 @@
+---
+title: "class9-26"
+author: "David Moberg"
+date: "9/26/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(gapminder)
+library(knitr)
+```
+
+```{r}
+ggplot(gapminder%>%filter(year==1962), aes(x=gdpPercap, y = lifeExp, size = pop))+facet_wrap('continent')+geom_point()+scale_x_log10()
+
+```
+
+
